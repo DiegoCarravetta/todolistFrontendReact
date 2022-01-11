@@ -26,7 +26,8 @@ const Cadastro = () => {
 
     alert(result.message);
     navigate('/');
-
+  }
+  
   return (
     <div className='container'>
       <div className='card mt-4'>
@@ -77,6 +78,6 @@ const Cadastro = () => {
       </div>
     </div>
   )
-}}
+}
 
 export default Cadastro;
