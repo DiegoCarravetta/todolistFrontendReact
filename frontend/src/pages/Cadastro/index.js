@@ -1,11 +1,37 @@
 import React from "react";
+import Api from "../../api/api";
+import {useNavigate} from "react-router-dom";
 
 const Cadastro = () => {
+  const navigate = useNavigate();
+
+  const handleSubmit = async (evento) => {
+    evento.preventDefault();
+    const titulo = evento.target.titulo.value;
+    const descricao = evento.target.descricao.value; 
+    const propriedade = evento.target.propriedade.value;
+    const status = evento.target.status.value;
+    const prazo = evento.target.prazo.value;
+
+    const tarefa = {
+      titulo,
+      descricao,
+      propriedade,
+      status,
+      prazo
+    }
+
+    const response = await Api.fetchPost(tarefa);
+    const result = await response.json();
+
+    alert(result.message);
+    navigate('/');
+
   return (
     <div className='container'>
       <div className='card mt-4'>
         <div className='card-body'>
-          <form>
+          <form method='POST' onSubmit={handleSubmit}>
             <div className='row mb-4'>
               <div className='col-4'>
                 <div className='form-group'>
@@ -42,7 +68,7 @@ const Cadastro = () => {
             </div>
             <div className='row'>
               <div className='col-4'>
-                <button className='btn btn-success me-2'>Enviar</button>
+                <button className='btn btn-success me-2' type='submit'>Enviar</button>
                 <button className='btn btn-outline-primary'>Voltar</button>
               </div>
             </div>
@@ -51,6 +77,6 @@ const Cadastro = () => {
       </div>
     </div>
   )
-}
+}}
 
 export default Cadastro;
