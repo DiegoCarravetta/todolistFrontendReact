@@ -4,11 +4,14 @@ import './index.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import App from './App';
 import Header from './Components/shared/Header';
+import {BrowserRouter} from "react-router-dom";
 
 ReactDOM.render(
   <React.StrictMode>
-    <Header/>
-    <App />
+    <BrowserRouter>
+      <Header/>
+      <App/>
+    </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
 );
