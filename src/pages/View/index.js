@@ -46,7 +46,7 @@ const View = () => {
             <p>Prazo: {tarefa.prazo}</p>
             <p>Data de Criação: {tarefa.dataCriacao}</p>
             <div className='btn-group my-3 w-100'>
-              <Link to={`/edit/${tarefa._id}`} className='btn btn-info text-white'>Editar</Link>
+              <Link to={`/edit/${tarefa._id}`} className='btn btn-warning  text-white'>Editar</Link>
               <button className='btn btn-danger' onClick={abreModal}>Excluir</button>
             </div>
           </div>

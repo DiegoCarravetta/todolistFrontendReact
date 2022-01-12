@@ -1,3 +1,4 @@
+import './index.css';
 import React from "react";
 import ListTarefas from "../../Components/structure/ListTarefas";
 
